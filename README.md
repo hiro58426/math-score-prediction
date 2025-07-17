@@ -1,5 +1,3 @@
-# Math Score Prediction
-
 import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
@@ -15,7 +13,7 @@ for col in label_cols:
     df[col] = LabelEncoder().fit_transform(df[col])
 
 # 特徴量と目的変数
-X = df.drop(columns=["reading score", "writing score", "math score"])
+X = df.drop(columns=["math score"])
 y = df["math score"]
 
 # 特徴量を標準化、目的変数を0〜1に正規化
@@ -87,5 +85,3 @@ plt.title("Actual vs Predicted Math Scores (Improved)")
 plt.grid(True)
 plt.tight_layout()
 plt.show()
-
-# 進捗中の変更
