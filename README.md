@@ -1,7 +1,5 @@
 # Math Score Prediction
 
-This project analyzes YouTube comments and predicts math scores using emotion classification
-
 import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
