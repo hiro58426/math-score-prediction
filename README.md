@@ -17,7 +17,7 @@ Kaggle URL: https://www.kaggle.com/datasets/spscientist/students-performance-in-
 数学スコア（math score）
 を予測する
 
-#　ニューラルネットワーク構成
+# ニューラルネットワーク構成
 
 Input Layer: 7ノード（特徴量の次元数）
 Hidden Layer 1: 30ノード（ReLU）
@@ -35,10 +35,10 @@ Epoch 2500: Loss = 0.0026
 ✅ Test RMSE: 5.69
 ✅ R² Score  : 0.8541
 
-＃　考察
+# 考察
 もともと学生の属性情報（性別、人種、親の学歴、昼食、テスト準備）を用いて数学スコアを予測していたが、そこに 「reading score」「writing score」の2つの他教科の成績を新たに特徴量として追加したことで、予測精度が大きく改善された。(RMSE:15.19→5.69)
 
-＃コード
+# コード
 
 import pandas as pd
 import torch
