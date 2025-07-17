@@ -1,3 +1,44 @@
+# 数学スコア予測（Math Score Prediction）
+
+学生の属性や学力情報から「数学の点数（math score）」を予測する
+
+# 使用データ
+データ名: Students Performance in Exams  
+Kaggle URL: https://www.kaggle.com/datasets/spscientist/students-performance-in-exams
+
+性別（gender）
+人種/民族（race/ethnicity）
+親の学歴（parental level of education）
+昼食の内容（lunch）
+テスト準備の有無（test preparation course）
+リーディングスコア（reading score）
+ライティングスコア（writing score）
+から
+数学スコア（math score）
+を予測する
+
+#　ニューラルネットワーク構成
+
+Input Layer: 7ノード（特徴量の次元数）
+Hidden Layer 1: 30ノード（ReLU）
+Hidden Layer 2: 30ノード（ReLU）
+Output Layer: 1ノード（math score予測）
+
+# 結果
+Epoch 0: Loss = 0.2232
+Epoch 500: Loss = 0.0030
+Epoch 1000: Loss = 0.0028
+Epoch 1500: Loss = 0.0027
+Epoch 2000: Loss = 0.0027
+Epoch 2500: Loss = 0.0026
+
+✅ Test RMSE: 5.69
+
+＃　考察
+もともと学生の属性情報（性別、人種、親の学歴、昼食、テスト準備）を用いて数学スコアを予測していたが、そこに 「reading score」「writing score」の2つの他教科の成績を新たに特徴量として追加したことで、予測精度が大きく改善された。(RMSE:15.19→5.69)
+
+＃コード
+
 import pandas as pd
 import torch
 from sklearn.model_selection import train_test_split
